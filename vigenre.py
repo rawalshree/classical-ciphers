@@ -10,7 +10,7 @@ class Vigenre:
     # A - Z ==> 65 - 90
     # a - z ==> 97 - 122
     def setKey(self, key):
-        self.key = key
+        self.key = int(key)
 
     def encryption(self, plainText):
         global cipher

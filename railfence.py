@@ -8,7 +8,7 @@ cipher = ""
 class Railfence:
 
     def setKey(self, key):
-        self.key = key
+        self.key = int(key)
 
     def encryption(self, plainText):
         global cipher
