@@ -1,3 +1,10 @@
+'''
+Owner - Rawal Shree
+Email - rawalshreepal000@gmail.com
+Date - 28th February 2018
+'''
+
+
 from collections import OrderedDict
 
 global plain
@@ -30,6 +37,7 @@ class PlayFair:
                 Matrix[x][y] = self.key[z]
                 postion[self.key[z]] = (x,y)
                 z += 1
+
 
     def encryption(self, plainText):
         global cipher
