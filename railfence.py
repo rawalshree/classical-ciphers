@@ -1,3 +1,10 @@
+'''
+Owner - Rawal Shree
+Email - rawalshreepal000@gmail.com
+Date - 28th February 2018
+'''
+
+
 import math
 
 global plain
@@ -5,10 +12,12 @@ global cipher
 plain = ""
 cipher = ""
 
+
 class Railfence:
 
     def setKey(self, key):
         self.key = int(key)
+
 
     def encryption(self, plainText):
         global cipher
@@ -19,6 +28,7 @@ class Railfence:
                 cipher += self.plainText[y]
 
         return cipher
+
 
     def decryption(self, cipherText):
         global plain
