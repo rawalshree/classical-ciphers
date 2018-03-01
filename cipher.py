@@ -4,6 +4,7 @@ from rowTransposition import *
 from railfence import *
 from vigenre import *
 from playfair import *
+from monoalphabetic import *
 import sys
 
 cc = Caesar()
@@ -40,7 +41,8 @@ def cipher(cipher_name, secret_key, enc_dec, input_file, output_file):
                "PLF" : (pf.setKey, {"ENC" : pf.encryption, "DEC" : pf.decryption}),
                "RFC" : (rf.setKey, {"ENC" : rf.encryption, "DEC" : rf.decryption}),
                "VIG" : (vg.setKey, {"ENC" : vg.encryption, "DEC" : vg.decryption}),
-               "RTS" : (rt.setKey, {"ENC" : rt.encryption, "DEC" : rt.decryption})}
+               "RTS" : (rt.setKey, {"ENC" : rt.encryption, "DEC" : rt.decryption}),
+               "MAC" : (mc.setKey, {"ENC" : mc.encryption, "DEC" : mc.decryption})}
 
     file = open(input_file, "r")
     for line in file:
@@ -71,6 +73,3 @@ if __name__ == "__main__":
     d = str(sys.argv[4])
     e = str(sys.argv[5])
     cipher(a, b, c, d, e)
-
-
-

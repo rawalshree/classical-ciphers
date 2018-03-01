@@ -1,4 +1,3 @@
-
 global plain
 global cipher
 global position
@@ -15,16 +14,22 @@ class Monoalphabetic:
         self.key = key
 
         for x in range(26):
-            position[x+97] = self.key[x]
+            position[chr(x+97)] = self.key[x]
             
     def encryption(self, plainText):
-        global cipher
+        global cipher, position
         self.plainText = plainText
-        
+
+        for char in self.plainText:
+            cipher += position[char]
+
         return cipher
         
     def decryption(self, cipherText):
-        global plain
+        global plain, position
         self.cipherText = cipherText
+
+        for char in self.cipherText:
+            plain += position.keys()[position.values().index(char)]
 
         return plain
