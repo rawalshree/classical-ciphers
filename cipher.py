@@ -1,3 +1,10 @@
+'''
+Owner - Rawal Shree
+Email - rawalshreepal000@gmail.com
+Date - 28th February 2018
+'''
+
+
 from caesar import *
 #from hillCipher import *
 from rowTransposition import *
@@ -21,21 +28,12 @@ mc = Monoalphabetic()
 def cipher(cipher_name, secret_key, enc_dec, input_file, output_file):
     intext = ""
     outtext = ""
+    
     print("The cipher name is :", cipher_name)
     print("The secret key  is :", secret_key)
     print("The operation is :", enc_dec)
     print("The input file is :", input_file)
     print("The output file is :", output_file)
-
-    '''
-    options = {"CES" : (cc.setKey, {"ENC" : cc.encryption, "DEC" : cc.decryption}), 
-               "PLF" : (pf.setKey, {"ENC" : pf.encryption, "DEC" : pf.decryption}),
-               "RFC" : (rf.setKey, {"ENC" : rf.encryption, "DEC" : rf.decryption}),
-               "VIG" : (vg.setKey, {"ENC" : vg.encryption, "DEC" : vg.decryption}),
-               "RTS" : (rt.setKey, {"ENC" : rt.encryption, "DEC" : rt.decryption}),
-               "HIC" : (hc.setKey, {"ENC" : hc.encryption, "DEC" : hc.decryption}),
-               "TRE" : (tre.setKey, {"ENC" : tre.encryption, "DEC" : tre.decryption}),}
-    '''
 
     options = {"CES" : (cc.setKey, {"ENC" : cc.encryption, "DEC" : cc.decryption}), 
                "PLF" : (pf.setKey, {"ENC" : pf.encryption, "DEC" : pf.decryption}),
@@ -55,15 +53,6 @@ def cipher(cipher_name, secret_key, enc_dec, input_file, output_file):
     file = open(output_file, "w+")
     file.write(outtext)
     file.close
-
-'''
-PLF:Playfair
-RTS:Row Transposition
-RFC:Railfence
-VIG:Vigenre
-CES:Caesar
-MAC:Monoalphabetic Cipher (graduate students only)
-'''
 
 
 if __name__ == "__main__":
