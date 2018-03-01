@@ -1,3 +1,9 @@
+'''
+Owner - Rawal Shree
+Email - rawalshreepal000@gmail.com
+Date - 28th February 2018
+'''
+
 
 global plain
 global cipher
@@ -10,7 +16,7 @@ class Vigenre:
     # A - Z ==> 65 - 90
     # a - z ==> 97 - 122
     def setKey(self, key):
-        self.key = int(key)
+        self.key = key
 
     def encryption(self, plainText):
         global cipher
