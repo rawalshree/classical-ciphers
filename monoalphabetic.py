@@ -1,3 +1,10 @@
+'''
+Owner - Rawal Shree
+Email - rawalshreepal000@gmail.com
+Date - 28th February 2018
+'''
+
+
 global plain
 global cipher
 global position
@@ -16,6 +23,7 @@ class Monoalphabetic:
         for x in range(26):
             position[chr(x+97)] = self.key[x]
             
+
     def encryption(self, plainText):
         global cipher, position
         self.plainText = plainText
@@ -24,6 +32,7 @@ class Monoalphabetic:
             cipher += position[char]
 
         return cipher
+        
         
     def decryption(self, cipherText):
         global plain, position
