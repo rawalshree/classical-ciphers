@@ -1,3 +1,9 @@
+'''
+Owner - Rawal Shree
+Email - rawalshreepal000@gmail.com
+Date - 28th February 2018
+'''
+
 
 global plain
 global cipher
@@ -12,6 +18,7 @@ class Caesar:
     def setKey(self, key):
         self.key = int(key)
 
+
     def encryption(self, plainText):
         global cipher
         self.plainText = plainText
@@ -22,6 +29,7 @@ class Caesar:
                     char = chr(ord(char) - 26)
                 cipher += char
         return cipher
+        
         
     def decryption(self, cipherText):
         global plain
