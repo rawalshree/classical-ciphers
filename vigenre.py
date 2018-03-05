@@ -36,8 +36,8 @@ class Vigenre:
         global plain
         self.cipherText = cipherText
 
-        for x in range(len(self.plainText)):
-            if self.plainText[x].isalpha():
+        for x in range(len(self.cipherText)):
+            if self.cipherText[x].isalpha():
                 char = chr(((ord(self.cipherText[x]) - ord(self.key[x % len(self.key)]))) + 97)
                 if ord(char) < ord('a'):
                     char = chr(ord(char) + 26)
