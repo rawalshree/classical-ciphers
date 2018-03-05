@@ -6,7 +6,7 @@ Date - 28th February 2018
 
 
 from caesar import *
-#from hillCipher import *
+from hillCipher import *
 from rowTransposition import *
 from railfence import *
 from vigenre import *
@@ -20,7 +20,7 @@ rf = Railfence()
 vg = Vigenre()
 pf = PlayFair()
 mc = Monoalphabetic()
-#hc = HillCipher()
+hc = HillCipher()
 #tre = ThreeRotorEnigma()
 
 
@@ -40,7 +40,8 @@ def cipher(cipher_name, secret_key, enc_dec, input_file, output_file):
                "RFC" : (rf.setKey, {"ENC" : rf.encryption, "DEC" : rf.decryption}),
                "VIG" : (vg.setKey, {"ENC" : vg.encryption, "DEC" : vg.decryption}),
                "RTS" : (rt.setKey, {"ENC" : rt.encryption, "DEC" : rt.decryption}),
-               "MAC" : (mc.setKey, {"ENC" : mc.encryption, "DEC" : mc.decryption})}
+               "MAC" : (mc.setKey, {"ENC" : mc.encryption, "DEC" : mc.decryption}),
+               "HLC" : (hc.setKey, {"ENC" : hc.encryption, "DEC" : hc.decryption})}
 
     file = open(input_file, "r")
     for line in file:
