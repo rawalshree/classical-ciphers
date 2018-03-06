@@ -14,6 +14,7 @@
                 VIG - Vigenre
                 RTS - Row Transposition
                 HLC - HillCipher
+                TRE - ThreeRotorEnigma
 
 <key> : The key to be used
 
