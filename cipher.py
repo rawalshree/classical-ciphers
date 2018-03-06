@@ -12,6 +12,7 @@ from railfence import *
 from vigenre import *
 from playfair import *
 from monoalphabetic import *
+from threerotorenigma import *
 import sys
 
 cc = Caesar()
@@ -21,7 +22,7 @@ vg = Vigenre()
 pf = PlayFair()
 mc = Monoalphabetic()
 hc = HillCipher()
-#tre = ThreeRotorEnigma()
+tre = ThreeRotorEnigma()
 
 
 
@@ -41,7 +42,8 @@ def cipher(cipher_name, secret_key, enc_dec, input_file, output_file):
                "VIG" : (vg.setKey, {"ENC" : vg.encryption, "DEC" : vg.decryption}),
                "RTS" : (rt.setKey, {"ENC" : rt.encryption, "DEC" : rt.decryption}),
                "MAC" : (mc.setKey, {"ENC" : mc.encryption, "DEC" : mc.decryption}),
-               "HLC" : (hc.setKey, {"ENC" : hc.encryption, "DEC" : hc.decryption})}
+               "HLC" : (hc.setKey, {"ENC" : hc.encryption, "DEC" : hc.decryption}), 
+               "TRE" : (tre.setKey, {"ENC" : tre.encryption, "DEC" : tre.decryption})}
 
     file = open(input_file, "r")
     for line in file:
