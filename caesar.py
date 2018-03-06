@@ -41,3 +41,4 @@ class Caesar:
                     char = chr(ord(char) + 26)
                 plain += char
         return plain
+        
