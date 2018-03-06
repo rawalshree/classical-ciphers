@@ -62,15 +62,15 @@ class ThreeRotorEnigma:
             cipher += position3[position2[position1[char]]]
             counter3 += 1
             position3 = self.shift_dict(position3, 1)
-            if counter3 == 25:
+            if counter3 == 26:
                 counter2 += 1
                 position2 = self.shift_dict(position2, 1)
                 counter3 = 0
-            if counter2 == 25:
+            if counter2 == 26:
                 counter1 += 1
                 position1 = self.shift_dict(position1, 1)
                 counter2 = 0
-            if counter1 == 25:
+            if counter1 == 26:
                 counter1 = 0
 
         return cipher
@@ -86,15 +86,15 @@ class ThreeRotorEnigma:
             plain += position1.keys()[position1.values().index(z)]
             counter3 += 1
             position3 = self.shift_dict(position3, 1)
-            if counter3 == 25:
+            if counter3 == 26:
                 counter2 += 1
                 position2 = self.shift_dict(position2, 1)
                 counter3 = 0
-            if counter2 == 25:
+            if counter2 == 26:
                 counter1 += 1
                 position1 = self.shift_dict(position1, 1)
                 counter2 = 0
-            if counter1 == 25:
+            if counter1 == 26:
                 counter1 = 0
 
         return plain
