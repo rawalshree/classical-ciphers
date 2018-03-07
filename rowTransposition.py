@@ -10,6 +10,8 @@ import math
 global plain
 global cipher
 global chunks
+global Success
+Success = False
 chunks = {}
 plain = ""
 cipher = ""
@@ -18,41 +20,53 @@ cipher = ""
 class RowTransposition:
 
     def setKey(self, key):
+        global Success
         self.key = str(key)
+        if self.key > 0:
+            Success = True
 
 
     def encryption(self, plainText):
-        global cipher, chunks
+        global cipher, chunks, Success
         self.plainText = plainText
 
-        while len(self.plainText) % len(self.key) != 0:
-            self.plainText += "*"
+        if Success:
+            while len(self.plainText) % len(self.key) != 0:
+                self.plainText += "*"
 
-        for x in range(len(self.key)):
-            y = x
-            while y < len(self.plainText):
-                cipher += self.plainText[y]
-                y += len(self.key)
-            chunks[int(self.key[x])] = cipher
-            cipher = ""
-        
-        for x in range(len(self.key)):
-            cipher += chunks[x+1]
-        
-        return cipher
+            for x in range(len(self.key)):
+                y = x
+                while y < len(self.plainText):
+                    cipher += self.plainText[y]
+                    y += len(self.key)
+                chunks[int(self.key[x])] = cipher
+                cipher = ""
+            
+            for x in range(len(self.key)):
+                cipher += chunks[x+1]
+            
+            return cipher
+        else:
+            print("Invalid Key")
+            return self.plainText
 
 
     def decryption(self, cipherText):
         global plain, chunks
         self.cipherText = cipherText
-        z = 0
-        height = len(self.cipherText) / len(self.key)
-        for x in range(0, len(self.cipherText), height):
-            chunks[int(self.key[z])] = self.cipherText[x:x+height]
-            z += 1
 
-        for x in range(height):
-            for y in range(len(self.key)):
-                plain += chunks[y+1][x]
+        if Success:
+            z = 0
+            height = len(self.cipherText) / len(self.key)
+            for x in range(0, len(self.cipherText), height):
+                chunks[int(self.key[z])] = self.cipherText[x:x+height]
+                z += 1
 
-        return plain
+            for x in range(height):
+                for y in range(len(self.key)):
+                    plain += chunks[y+1][x]
+
+            return plain
+        else:
+            print("Invalid Key")
+            return self.cipherText
