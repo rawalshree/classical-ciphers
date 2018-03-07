@@ -8,6 +8,8 @@ Github - https://github.com/rawalshree
 global plain
 global cipher
 global position
+global Success
+Success = False
 position = {}
 plain = ""
 cipher = ""
@@ -18,27 +20,38 @@ class Monoalphabetic:
     # A - Z ==> 65 - 90
     # a - z ==> 97 - 122
     def setKey(self, key):
+        global Success
         self.key = key
+        if self.key.isalpha() and len(self.key) == 26:
+            Success = True
 
-        for x in range(26):
-            position[chr(x+97)] = self.key[x]
+            for x in range(26):
+                position[chr(x+97)] = self.key[x]
             
 
     def encryption(self, plainText):
-        global cipher, position
+        global cipher, position, Success
         self.plainText = plainText
+        
+        if Success:
+            for char in self.plainText:
+                cipher += position[char]
 
-        for char in self.plainText:
-            cipher += position[char]
-
-        return cipher
+            return cipher
+        else:
+            print("Invalid Key")
+            return self.plainText
         
         
     def decryption(self, cipherText):
-        global plain, position
+        global plain, position, Success
         self.cipherText = cipherText
 
-        for char in self.cipherText:
-            plain += position.keys()[position.values().index(char)]
+        if Success:
+            for char in self.cipherText:
+                plain += position.keys()[position.values().index(char)]
 
-        return plain
+            return plain
+        else:
+            print("Invalid Key")
+            return self.cipherText
