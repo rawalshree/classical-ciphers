@@ -4,7 +4,7 @@
 > Run the cipher.py file followed by the arguments
 
 **The arguments are**
-> root@name:~# python cipher.py  <cipher_name>  <key>  <ENC/DEC>  <input_file>  <output_file>
+> root@name:~# python cipher.py  <cipher_name>  <cipher_key>  <ENC/DEC>  <input_file>  <output_file>
 
 ```
 <cipher_name> : PLS - Playfair
@@ -16,7 +16,7 @@
                 HLC - HillCipher
                 TRE - ThreeRotorEnigma
 
-<key> : The key to be used
+<cipher_key> : The key to be used
 
 <ENC/DEC> : ENC - Encryption
             DEC - Decryption
