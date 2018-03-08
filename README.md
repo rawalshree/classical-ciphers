@@ -4,7 +4,7 @@
 > Run the cipher.py file followed by the arguments
 
 **The arguments are**
-> root@name:~# python cipher.py  <cipher_name>  <key>  <ENC/DEC>  <input_file>  <output_file>
+> root@name:~# python cipher.py <cipher_name> <key> <ENC/DEC> <input_file> <output_file>
 
 ```
 <cipher_name> : PLS - Playfair
