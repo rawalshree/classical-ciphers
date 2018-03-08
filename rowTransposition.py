@@ -61,8 +61,6 @@ class RowTransposition:
             for x in range(0, len(self.cipherText), height):
                 chunks[z] = self.cipherText[x:x+height]
                 z += 1
-            
-            print(chunks)
 
             for x in range(height):
                 for y in range(len(self.key)):
