@@ -39,11 +39,11 @@ class RowTransposition:
                 while y < len(self.plainText):
                     cipher += self.plainText[y]
                     y += len(self.key)
-                chunks[int(self.key[x])] = cipher
+                chunks[x+1] = cipher
                 cipher = ""
             
             for x in range(len(self.key)):
-                cipher += chunks[x+1]
+                cipher += chunks[int(self.key[x])]
             
             return cipher
         else:
@@ -56,15 +56,15 @@ class RowTransposition:
         self.cipherText = cipherText
 
         if Success:
-            z = 1
+            z = 0
             height = len(self.cipherText) / len(self.key)
             for x in range(0, len(self.cipherText), height):
-                chunks[z] = self.cipherText[x:x+height]
+                chunks[int(self.key[z])] = self.cipherText[x:x+height]
                 z += 1
 
             for x in range(height):
                 for y in range(len(self.key)):
-                    plain += chunks[int(self.key[y])][x]
+                    plain += chunks[y+1][x]
                 
 
             return plain
